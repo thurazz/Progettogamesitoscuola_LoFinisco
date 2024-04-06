@@ -1,4 +1,4 @@
-const sales = [ //i point funzionano proprio come un array basterà andare all'indice giusto
+const NOVEL = [ //i point funzionano proprio come un array basterà andare all'indice giusto
     {
         action: "Quando finirà?",
         opt1: {
@@ -47,7 +47,7 @@ const sales = [ //i point funzionano proprio come un array basterà andare all'i
 
 const state = {
   index: 0,
-  data: sales,
+  data: NOVEL,
   get current() {
     return this.data[this.index]
   }
@@ -56,7 +56,8 @@ const state = {
 const ui = {
   action: document.querySelector('#action-text'),
   left: document.querySelector('#option-1'),
-  right: document.querySelector('#option-2')
+  right: document.querySelector('#option-2'),
+  imagebox: document.querySelector('#image-box')
 };
 
 const update = (nextpoint) => {
@@ -68,6 +69,7 @@ const render = () => {
   ui.action.innerText = state.current.action;
   ui.left.innerText = state.current.opt1.text;
   ui.right.innerText = state.current.opt2.text;
+  ui.imagebox.style.backgroundImage = `url(images/${state.index}.jpeg)`; // Load image based on index
 };
 
 ui.left.addEventListener('click', () => update(state.current.opt1.nextpoint));
