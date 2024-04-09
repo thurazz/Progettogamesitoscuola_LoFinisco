@@ -1,51 +1,51 @@
-const NOVEL = [ //i point funzionano proprio come un array basterà andare all'indice giusto
+const NOVEL = [ //i point funzionano proprio come un array basterà andare all'indice giusto continua a commentare gli index senno ti scordi coglione
     {
-        action: "Quando finirà?",
+        action: "",
         opt1: {
-            text: "Mai",
+            text: "",
             nextpoint: 1,
         },
         opt2:  {
-            text: "perchè vuoi farlo finire?",
+            text: "",
             nextpoint: 3,
         },
     },
     {
-        action: "odio i maledetti negri",
+        action: "",
         opt1: {
-            text: "sto impazzendo no joke",
+            text: "",
             nextpoint: 0,
         },
         opt2: {
-            text: "uccido qualcuno",
+            text: "",
             nextpoint: 2,
         }
     },
     {
-        action: "se non funziona ti uccido",
+        action: "",
         opt1: {
-            text: "no non scherzo",
+            text: "",
             nextpoint: 1,
         },
         opt2: {
-            text: "mi impicco domani",
+            text: "",
             nextpoint: 0,
         }
     },
     {
-        action: "nextpointss",
+        action: "",
         opt1: {
-            text: "aia",
+            text: "",
             nextpoint: 1,
         },
         opt2: {
-            text: "ciao",
+            text: "",
             nextpoint: 0,
         }
     }
 ];
 
-const state = {
+const state = { //verifica di merda non serve a un cazzo lo puoi anche lascia stare
   index: 0,
   data: NOVEL,
   get current() {
@@ -53,26 +53,27 @@ const state = {
   }
 };
 
-const ui = {
+const ui = { //questo serve ti amo serve per la query selection tanto è tutto importato da google stai apposto
   action: document.querySelector('#action-text'),
   left: document.querySelector('#option-1'),
   right: document.querySelector('#option-2'),
   imagebox: document.querySelector('#image-box')
 };
 
-const update = (nextpoint) => {
+const update = (nextpoint) => { //update dei next point da array passaggio per riferimento 
   state.index = nextpoint;
   render();
 };
 
-const render = () => {
-  ui.action.innerText = state.current.action;
+const render = () => { //render di tutto basandosi sempre su array 
+  ui.action.innerText = state.current.action; 
   ui.left.innerText = state.current.opt1.text;
   ui.right.innerText = state.current.opt2.text;
-  ui.imagebox.style.backgroundImage = `url(images/${state.index}.jpeg)`; // Load image based on index
+  ui.imagebox.style.backgroundImage = `url(images/${state.index}.jpeg)`; //loading basato su index array con jpeg non ho voglia di cambiarli l'estensione lo tenete così 
+  ui.imagebox.style.backgroundImage = `url(images/${state.index}.jpg)`; //loading basato su index array con jpg
 };
 
-ui.left.addEventListener('click', () => update(state.current.opt1.nextpoint));
+ui.left.addEventListener('click', () => update(state.current.opt1.nextpoint)); //prendi event dal mouse sinistra destra della UI stai nel chill fra basta che stai nel tuo e non tocchi niente
 ui.right.addEventListener('click', () => update(state.current.opt2.nextpoint));
 
-render();
+render(); //non ottimizzare da qua in poi ricoralo è impossibile
