@@ -1,20 +1,20 @@
 const NOVEL = [ //i point funzionano proprio come un array basterà andare all'indice giusto continua a commentare gli index senno ti scordi coglione
     {
-        action: "",
+        action: "porco dio ",
         opt1: {
-            text: "",
+            text: "odio i negri fr",
             nextpoint: 1,
         },
         opt2:  {
-            text: "",
-            nextpoint: 3,
+            text: "dio cane",
+            nextpoint: 1,
         },
     },
     {
         action: "",
         opt1: {
             text: "",
-            nextpoint: 0,
+            nextpoint: 2,
         },
         opt2: {
             text: "",
@@ -25,11 +25,11 @@ const NOVEL = [ //i point funzionano proprio come un array basterà andare all'i
         action: "",
         opt1: {
             text: "",
-            nextpoint: 1,
+            nextpoint: 3,
         },
         opt2: {
             text: "",
-            nextpoint: 0,
+            nextpoint: 3,
         }
     },
     {
@@ -40,7 +40,7 @@ const NOVEL = [ //i point funzionano proprio come un array basterà andare all'i
         },
         opt2: {
             text: "",
-            nextpoint: 0,
+            nextpoint: 3,
         }
     }
 ];
@@ -53,7 +53,7 @@ const state = { //verifica di merda non serve a un cazzo lo puoi anche lascia st
   }
 };
 
-const ui = { //questo serve ti amo serve per la query selection tanto è tutto importato da google stai apposto
+const ui = { //questo serve, ti amo ,serve per la query selection tanto è tutto importato da google stai apposto
   action: document.querySelector('#action-text'),
   left: document.querySelector('#option-1'),
   right: document.querySelector('#option-2'),
@@ -70,7 +70,6 @@ const render = () => { //render di tutto basandosi sempre su array
   ui.left.innerText = state.current.opt1.text;
   ui.right.innerText = state.current.opt2.text;
   ui.imagebox.style.backgroundImage = `url(images/${state.index}.jpeg)`; //loading basato su index array con jpeg non ho voglia di cambiarli l'estensione lo tenete così 
-  ui.imagebox.style.backgroundImage = `url(images/${state.index}.jpg)`; //loading basato su index array con jpg
 };
 
 ui.left.addEventListener('click', () => update(state.current.opt1.nextpoint)); //prendi event dal mouse sinistra destra della UI stai nel chill fra basta che stai nel tuo e non tocchi niente
