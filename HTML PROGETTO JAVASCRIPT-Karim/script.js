@@ -1,16 +1,16 @@
 const NOVEL = [ //i point funzionano proprio come un array basterà andare all'indice giusto continua a commentare gli index senno ti scordi coglione
-    {
-        action: "porco dio ",
+    { //scelta 0
+        action: "",
         opt1: {
-            text: "odio i negri fr",
+            text: "",
             nextpoint: 1,
         },
         opt2:  {
-            text: "dio cane",
+            text: "",
             nextpoint: 1,
         },
     },
-    {
+    {//scelta 1
         action: "",
         opt1: {
             text: "",
@@ -21,7 +21,7 @@ const NOVEL = [ //i point funzionano proprio come un array basterà andare all'i
             nextpoint: 2,
         }
     },
-    {
+    {//scelta 2
         action: "",
         opt1: {
             text: "",
@@ -32,7 +32,7 @@ const NOVEL = [ //i point funzionano proprio come un array basterà andare all'i
             nextpoint: 3,
         }
     },
-    {
+    {//scelta 3
         action: "",
         opt1: {
             text: "",
@@ -42,7 +42,150 @@ const NOVEL = [ //i point funzionano proprio come un array basterà andare all'i
             text: "",
             nextpoint: 3,
         }
-    }
+    },
+    {//scelta 4
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 5
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 6
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 7
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 8
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 9
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 10
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 11
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 12
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 13
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 14
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 15
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
+    {//scelta 16
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 1,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
+        }
+    },
 ];
 
 const state = { //verifica di merda non serve a un cazzo lo puoi anche lascia stare
@@ -69,7 +212,7 @@ const render = () => { //render di tutto basandosi sempre su array
   ui.action.innerText = state.current.action; 
   ui.left.innerText = state.current.opt1.text;
   ui.right.innerText = state.current.opt2.text;
-  ui.imagebox.style.backgroundImage = `url(images/${state.index}.jpeg)`; //loading basato su index array con jpeg non ho voglia di cambiarli l'estensione lo tenete così 
+  ui.imagebox.style.backgroundImage = `url(images/${state.index}.png)`; //loading basato su index array con jpeg non ho voglia di cambiarli l'estensione lo tenete così 
 };
 
 ui.left.addEventListener('click', () => update(state.current.opt1.nextpoint)); //prendi event dal mouse sinistra destra della UI stai nel chill fra basta che stai nel tuo e non tocchi niente
