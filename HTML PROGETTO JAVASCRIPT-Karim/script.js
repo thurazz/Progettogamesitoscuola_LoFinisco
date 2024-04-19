@@ -1,34 +1,34 @@
 const NOVEL = [ //i point funzionano proprio come un array basterà andare all'indice giusto continua a commentare gli index senno ti scordi coglione
     { //scelta 0
-        action: "",
+        action: "adad",
         opt1: {
-            text: "",
+            text: "dadada",
             nextpoint: 1,
         },
         opt2:  {
-            text: "",
+            text: "adadad",
             nextpoint: 1,
         },
     },
     {//scelta 1
-        action: "",
+        action: "adad",
         opt1: {
-            text: "",
+            text: "adada",
             nextpoint: 2,
         },
         opt2: {
-            text: "",
+            text: "dddd",
             nextpoint: 2,
         }
     },
     {//scelta 2
-        action: "",
+        action: "fgfg",
         opt1: {
-            text: "",
+            text: "fgfg",
             nextpoint: 3,
         },
         opt2: {
-            text: "",
+            text: "rgrg",
             nextpoint: 3,
         }
     },
