@@ -1,8 +1,8 @@
 const NOVEL = [ //i point funzionano proprio come un array basterà andare all'indice giusto continua a commentare gli index senno ti scordi coglione
     { //scelta 0
-        action: "adad",
+        action: "ucciditi ucciditi ucciditi ucciditi ucciditi ucciditi ucciditi ucciditi ucciditi ucciditi ",
         opt1: {
-            text: "dadada",
+            text: "ucciditi ucciditi ucciditi ucciditi ucciditi ucciditi",
             nextpoint: 1,
         },
         opt2:  {
