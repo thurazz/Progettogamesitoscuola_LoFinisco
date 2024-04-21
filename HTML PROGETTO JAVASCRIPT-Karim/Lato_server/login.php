@@ -5,7 +5,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password = $_POST["password"];
 
     //rimpiazzare con databese su VM o su server di mattia ricodalo
-    $dsn = "mysql:host=localhost;dbname=your_database";  
+    $dsn = "mysql:host=localhost;port=3306;dbname=login_form";  
     $username_db = "your_username";
     $password_db = "your_password";
 
