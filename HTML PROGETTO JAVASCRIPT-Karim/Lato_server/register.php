@@ -9,9 +9,9 @@ if (isset($_POST["regUsername"]) && isset($_POST["regPassword"])) {
 
     // Validate username and password (you may need more robust validation)
     // Store user data in database (example: using PDO)
-    $dsn = "mysql:host=localhost;dbname=your_database";
-    $username_db = "your_username";
-    $password_db = "your_password";
+    $dsn = "mysql:host=localhost;dbname=credenziali";
+    $username_db = "username";
+    $password_db = "password";
 
     try {
         $pdo = new PDO($dsn, $username_db, $password_db);
