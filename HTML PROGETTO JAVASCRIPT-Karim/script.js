@@ -1,189 +1,189 @@
-const NOVEL = [ //i point funzionano proprio come un array basterà andare all'indice giusto continua a commentare gli index senno ti scordi coglione
+const NOVEL = [
     { //scelta 0
-        action: " ",
+        action: "Andiamo a vedere il tramonto?",
         opt1: {
-            text: "",
-            nextpoint: 1,
+            text: "Si",
+            nextpoint: 2,
         },
         opt2:  {
-            text: "",
+            text: "No",
             nextpoint: 1,
         },
     },
     {//scelta 1
-        action: "adad",
+        action: "Non accetto un no come risposta",
         opt1: {
-            text: "adada",
+            text: "Si",
             nextpoint: 2,
         },
         opt2: {
-            text: "dddd",
+            text: "Si",
             nextpoint: 2,
         }
     },
     {//scelta 2
-        action: "fgfg",
+        action: "Perchè nel mentre che camminiamo non parliamo?",
         opt1: {
-            text: "fgfg",
+            text: "Va bene di cosa vuoi parlare?",
             nextpoint: 3,
         },
         opt2: {
-            text: "rgrg",
-            nextpoint: 3,
+            text: "Zitta e cammina prima arriviamo e meglio è",
+            nextpoint: 0,
         }
     },
     {//scelta 3
-        action: "",
+        action: "Pensi mai di essere osservato?",
         opt1: {
-            text: "",
-            nextpoint: 1,
+            text: "Perchè qualcuno dovrebbe osservare una persona noiosa come te...",
+            nextpoint: 4,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
-    {//scelta 4
-        action: "",
+    {//scelta 4 aggiungere foto
+        action: "Si forse hai ragione...",
         opt1: {
-            text: "",
-            nextpoint: 1,
+            text: "Parlando d'altro il tramonto è magnifico oggi vero?",
+            nextpoint: 5,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 5
-        action: "",
+        action: "Non l'avevo notato...",
         opt1: {
-            text: "",
-            nextpoint: 1,
+            text: "Perchè non alzi lo sguardo allora?",
+            nextpoint: 6,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 6
-        action: "",
+        action: "Non voglio",
         opt1: {
-            text: "",
-            nextpoint: 1,
+            text: "ALZA LO SGUARDO",
+            nextpoint: 7,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 7
-        action: "",
+        action: "Non voglio",
         opt1: {
-            text: "",
-            nextpoint: 1,
+            text: "ALZO LO SGUARDO",
+            nextpoint: 8,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 8
-        action: "",
+        action: "Non voglio",
         opt1: {
-            text: "",
-            nextpoint: 1,
+            text: "ALZALO",
+            nextpoint: 9,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 9
         action: "",
         opt1: {
             text: "",
-            nextpoint: 1,
+            nextpoint: 0,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 10
         action: "",
         opt1: {
             text: "",
-            nextpoint: 1,
+            nextpoint: 0,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 11
         action: "",
         opt1: {
             text: "",
-            nextpoint: 1,
+            nextpoint: 0,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 12
         action: "",
         opt1: {
             text: "",
-            nextpoint: 1,
+            nextpoint: 0,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 13
         action: "",
         opt1: {
             text: "",
-            nextpoint: 1,
+            nextpoint: 0,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 14
         action: "",
         opt1: {
             text: "",
-            nextpoint: 1,
+            nextpoint: 0,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 15
         action: "",
         opt1: {
             text: "",
-            nextpoint: 1,
+            nextpoint: 0,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
     {//scelta 16
         action: "",
         opt1: {
             text: "",
-            nextpoint: 1,
+            nextpoint: 0,
         },
         opt2: {
             text: "",
-            nextpoint: 3,
+            nextpoint: 0,
         }
     },
 ];
