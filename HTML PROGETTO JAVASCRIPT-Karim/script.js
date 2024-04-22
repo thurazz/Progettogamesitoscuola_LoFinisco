@@ -28,14 +28,14 @@ const NOVEL = [
             nextpoint: 3,
         },
         opt2: {
-            text: "Zitta e cammina prima arriviamo e meglio è",
+            text: "",
             nextpoint: 0,
         }
     },
     {//scelta 3
-        action: "Pensi mai di essere osservato?",
+        action: "Non ti senti osservato?",
         opt1: {
-            text: "Perchè qualcuno dovrebbe osservare una persona noiosa come te...",
+            text: "Si, ma è normale loro possono vedere il vuoto",
             nextpoint: 4,
         },
         opt2: {
@@ -44,9 +44,9 @@ const NOVEL = [
         }
     },
     {//scelta 4 aggiungere foto
-        action: "Si forse hai ragione...",
+        action: "Il vuoto, che cosa significa?",
         opt1: {
-            text: "Parlando d'altro il tramonto è magnifico oggi vero?",
+            text: "Non ti ricordi?",
             nextpoint: 5,
         },
         opt2: {
@@ -55,9 +55,9 @@ const NOVEL = [
         }
     },
     {//scelta 5
-        action: "Non l'avevo notato...",
+        action: "No",
         opt1: {
-            text: "Perchè non alzi lo sguardo allora?",
+            text: "Quello che hai sempre avuto dentro",
             nextpoint: 6,
         },
         opt2: {
@@ -66,9 +66,9 @@ const NOVEL = [
         }
     },
     {//scelta 6
-        action: "Non voglio",
+        action: "No non me lo ricordo",
         opt1: {
-            text: "ALZA LO SGUARDO",
+            text: "Forse un ricordo ti potrebbe aiutare",
             nextpoint: 7,
         },
         opt2: {
@@ -77,9 +77,9 @@ const NOVEL = [
         }
     },
     {//scelta 7
-        action: "Non voglio",
+        action: "perchè non ricordo..",
         opt1: {
-            text: "ALZO LO SGUARDO",
+            text: "alcune cose forse è meglio dimenticarle",
             nextpoint: 8,
         },
         opt2: {
@@ -88,9 +88,9 @@ const NOVEL = [
         }
     },
     {//scelta 8
-        action: "Non voglio",
+        action: "",
         opt1: {
-            text: "ALZALO",
+            text: "",
             nextpoint: 9,
         },
         opt2: {
@@ -206,8 +206,26 @@ const ui = { //questo serve, ti amo ,serve per la query selection tanto è tutto
 const update = (nextpoint) => { //update dei next point da array passaggio per riferimento 
   state.index = nextpoint;
   render();
+  changeAudio(state.index);
 };
-
+/*const changeAudio = (index) => {
+    const audio = document.querySelector('audio');
+    switch(index) {
+      case 0:
+        audio.src = "musica/flaterness.mp3"; // Change to the path of your audio file for choice 0
+        audio.volume=0.2;
+        break;
+      case 1:
+        audio.src = "musica/flaterness.mp3"; // Change to the path of your audio file for choice 1
+        audio.volume=0.2;
+        break;
+      // Add more cases for each choice as needed
+      default:
+        audio.src = "musica/flaterness.mp3";
+        audio.volume=0.2;
+        break;
+    }
+  };*/
 const render = () => { //render di tutto basandosi sempre su array 
   ui.action.innerText = state.current.action; 
   ui.left.innerText = state.current.opt1.text;
