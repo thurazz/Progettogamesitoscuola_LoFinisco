@@ -1,4 +1,5 @@
 <?php
+//godo funziona
 // Check if username and password are provided
 if (isset($_POST["regUsername"]) && isset($_POST["regPassword"])) {
     $username = $_POST["regUsername"];
