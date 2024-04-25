@@ -5,9 +5,11 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password = $_POST["password"];
 
     //rimpiazzare con databese su VM o su server di mattia ricodalo
-    $dsn = "mysql:host=localhost;port=3306;dbname=credenziali";  
-    $username_db = "root";
-    $password_db = "890980";
+    $host = "localhost";
+    $dbusername = "root";
+    $dbpassword = "890980";
+    $dbname = "";
+    $conn = new mysqli($host,$dbusername,$dbpassword,$dbname);
 
     try {
         $pdo = new PDO($dsn, $username_db, $password_db);
