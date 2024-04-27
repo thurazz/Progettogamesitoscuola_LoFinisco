@@ -42,27 +42,10 @@
                 <a href="registration.html"><p>registrazione</p></a>
                 <a href="login.html"><p>login</p></a>
                 </section>
-            
-                <section id="commenti">
-                <h2>ad</h2>
-                <a href="registration.html"><p>registrazione</p></a>
-                <a href="login.html"><p>login</p></a>
-                </section>
-                    
+                
         </section>
     </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="script.js"></script>
-
-<script>
-        $(document).ready(function() {
-            // Check if user is logged in and http_response_code is 200
-            if (http_response_code() === 200) {
-                // If true, display the comments section
-                $('#commenti').css('display', 'block');
-            }
-        });
-</script>
-
 </body>
 </html>
