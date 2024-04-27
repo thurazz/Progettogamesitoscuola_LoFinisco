@@ -36,25 +36,29 @@
             </div>
             <div class="text-paragaphs">  <p>‎ </p> <p>‎ </p><p>This is not a game</p></div>
 
-            <section id="commenti">
+            <section id="commenti2">
                 <h2>Commenti</h2>
                 <a href="registration.html"><p>registrazione</p></a>
                 <a href="login.html"><p>login</p></a>
             </section>
-            <?php
-            // Display comments only if login was successful (HTTP response code 200)
-            if (http_response_code() === 200) {
-                echo '<section id="nigga">';
-                echo '<h2>Commenti</h2>';
-                echo '<!-- Add your comment display logic here -->';
-                echo '</section>';
-            }
-            ?>
+            
+            <section id="commenti" style="display: none;">
+            <h2>Commenti</h2>
+            <a href="registration.html"><p>registrazione</p></a>
+            <a href="login.html"><p>login</p></a>
+            </section>
                     
         </section>
     </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="script.js"></script>
+<script>
+        // Check if user is logged in
+        <?php if (isset($_SESSION['user_id'])): ?>
+            // If user is logged in, display the "commenti" section
+            document.getElementById('commenti').style.display = 'block';
+        <?php endif; ?>
+    </script>
 </body>
 
 </html>
