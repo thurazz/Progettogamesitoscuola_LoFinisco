@@ -39,8 +39,8 @@
 
                 <section id="commenti2">
                 <h2>Commenti</h2>
-                <a href="registration.html"><p>registrazione</p></a>
-                <a href="login.html"><p>login</p></a>
+                <a href="registration.php"><p>registrazione</p></a>
+                <a href="login.php"><p>login</p></a>
                 </section>
                 
         </section>

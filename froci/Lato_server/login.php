@@ -40,7 +40,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             session_start();
             $_SESSION['error'] = "Invalid username or password";
             http_response_code(401);
-            header('Location: http://moonhubserver.ddns.net/login.html');
+            header('Location: http://moonhubserver.ddns.net/login.php');
             exit();
         }
         // Close connection
@@ -54,7 +54,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 } else {
     // Username or password not provided
     http_response_code(400);
-    header('Location: http://moonhubserver.ddns.net/login.html');
+    header('Location: http://moonhubserver.ddns.net/login.php');
     exit();
 }
 ?>
