@@ -33,7 +33,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $_SESSION['username'] = $user['username'];
             http_response_code(200);
             echo "negri";
-            header('Location: http://moonhubserver.ddns.net/index1.html');
+            header('Location: http://moonhubserver.ddns.net/index10.php');
             exit();
         } else {
             // Invalid username or password

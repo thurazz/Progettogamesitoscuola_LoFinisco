@@ -33,7 +33,8 @@ if (isset($_POST["regUsername"]) && isset($_POST["regPassword"])) {
 
         // Registration successful
         http_response_code(200);
-        echo "Registration successful!";
+        header('Location: http://moonhubserver.ddns.net/index10.php');
+        exit();
     } catch(PDOException $e) {
         // Handle error
         http_response_code(500);
