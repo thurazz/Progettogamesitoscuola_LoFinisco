@@ -1,4 +1,5 @@
 <?php
+session_start();
 // check con if per merda
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     $username = $_POST["username"];
@@ -32,11 +33,12 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             http_response_code(200);
-            echo window.location.href = 'http://moonhubserver.ddns.net';
+            header('index1.html');
+            exit();
         } else {
             // Invalid username or password
             http_response_code(401);
-            echo "Invalid username or password";
+            $_SESSION['error'] = "Invalid username or password";
         }
 
         // Close connection
