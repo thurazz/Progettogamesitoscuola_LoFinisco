@@ -33,18 +33,16 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $_SESSION['username'] = $user['username'];
             http_response_code(200);
             echo "negri";
-            header('Location: http://moonhubserver.ddns.net');
+            header('Location: http://moonhubserver.ddns.net/index1.html');
             exit();
         } else {
             // Invalid username or password
-            http_response_code(401);
             session_start();
             $_SESSION['error'] = "Invalid username or password";
+            http_response_code(401);
             header('Location: http://moonhubserver.ddns.net/login.html');
             exit();
-            echo "negri1";
         }
-
         // Close connection
         $pdo = null;
     } catch(PDOException $e) {
