@@ -32,12 +32,15 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             http_response_code(200);
-            header('/var/www/html/froci/froci/index1.html');
+            echo "negri";
+            header('Location: http://moonhubserver.ddns.net');
             exit();
         } else {
             // Invalid username or password
             http_response_code(401);
             $_SESSION['error'] = "Invalid username or password";
+            header('Location: http://moonhubserver.ddns.net/login.html')
+            echo "negri1";
         }
 
         // Close connection
