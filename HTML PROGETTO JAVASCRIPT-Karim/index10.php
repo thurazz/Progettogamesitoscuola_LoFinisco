@@ -21,8 +21,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
 </head>
 <body>
-<section id="black-box">
-</section>
+    <section id="black-box">
+    </section>
+
     <section id="text-banner">
         <section id="main-hub">
             <h1 class="titolo">Being Myself</h1>
@@ -36,29 +37,32 @@
             </div>
             <div class="text-paragaphs">  <p>‎ </p> <p>‎ </p><p>This is not a game</p></div>
 
-            <section id="commenti2">
+                <section id="commenti2">
                 <h2>Commenti</h2>
                 <a href="registration.html"><p>registrazione</p></a>
                 <a href="login.html"><p>login</p></a>
-            </section>
+                </section>
             
-            <section id="commenti" style="display: none;">
-            <h2>Commenti</h2>
-            <a href="registration.html"><p>registrazione</p></a>
-            <a href="login.html"><p>login</p></a>
-            </section>
+                <section id="commenti">
+                <h2>ad</h2>
+                <a href="registration.html"><p>registrazione</p></a>
+                <a href="login.html"><p>login</p></a>
+                </section>
                     
         </section>
     </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="script.js"></script>
-<script>
-        // Check if user is logged in
-        <?php if (isset($_SESSION['user_id'])): ?>
-            // If user is logged in, display the "commenti" section
-            document.getElementById('commenti').style.display = 'block';
-        <?php endif; ?>
-    </script>
-</body>
 
+<script>
+        $(document).ready(function() {
+            // Check if user is logged in and http_response_code is 200
+            if (http_response_code() === 200) {
+                // If true, display the comments section
+                $('#commenti').css('display', 'block');
+            }
+        });
+</script>
+
+</body>
 </html>
