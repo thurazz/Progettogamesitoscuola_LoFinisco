@@ -32,7 +32,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             http_response_code(200);
-            echo "Login successful!";
+            echo window.location.href = 'http://www.yourwebsite.com';
         } else {
             // Invalid username or password
             http_response_code(401);
