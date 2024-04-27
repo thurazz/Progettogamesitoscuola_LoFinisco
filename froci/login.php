@@ -8,11 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
             window.onload = function() {
-            // Check if error message exists
             if (sessionStorage.getItem('error')) {
-                // Display error message
                 document.querySelector('.errore').textContent = sessionStorage.getItem('error');
-                // Clear error message from session storage
                 sessionStorage.removeItem('error');
             }
         };
