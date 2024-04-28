@@ -11,31 +11,31 @@ const NOVEL = [
         },
     },
     {//scelta 1
-        action: "Era da molto che non vedevo il tramonto",
+        action: "Voglio guardare il tramonto.",
         opt1: {
-            text: "Ascolta le voci",
+            text: "Vai al parco.",
             nextpoint: 2,
         },
         opt2: {
-            text: "Ignorale",
-            nextpoint: 0,
+            text: "Vai sopra quel grattacielo.",
+            nextpoint: 2,
         }
     },
     {//scelta 2
-        action: "Ma loro non la smettono..",
+        action: "'Era da molto che non uscivo,il mondo sembra diverso.'",
         opt1: {
-            text: "",
+            text: "continui a parlare da sola?",
             nextpoint: 3,
         },
         opt2: {
-            text: "",
+            text: "...",
             nextpoint: 0,
         }
     },
     {//scelta 3
-        action: "",
+        action: "'Mi aiuta, mi aiuta a dimenticare quanto sono sola.'",
         opt1: {
-            text: "",
+            text: "Si ma sembri pazza",
             nextpoint: 4,
         },
         opt2: {
@@ -43,21 +43,21 @@ const NOVEL = [
             nextpoint: 0,
         }
     },
-    {//scelta 4 aggiungere foto
-        action: "",
+    {//scelta 4
+        action: "'Forse lo sono, infondo parlo anche da sola.'",
         opt1: {
-            text: "",
+            text: "Non dovresti dirti questo",
             nextpoint: 5,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Sei senza speranze non dovresti guardare il tramonto.",
+            nextpoint: 0, //crazy arch
         }
     },
     {//scelta 5
-        action: "",
+        action: "'Sei te il primo a dirlo'",
         opt1: {
-            text: "",
+            text: "Si ma io posso farlo",
             nextpoint: 6,
         },
         opt2: {
@@ -65,15 +65,15 @@ const NOVEL = [
             nextpoint: 0,
         }
     },
-    {//scelta 6
+    {//scelta 6 Musica horror tensione pura,immagine con persone che ti guardano
         action: "",
         opt1: {
-            text: "",
+            text: "Cambiando discorso sono ore che cammini,non hai notato che ti osservano?",
             nextpoint: 7,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Cambiando discorso sono ore che cammini,non hai notato che ti osservano?",
+            nextpoint: 7,
         }
     },
     {//scelta 7
@@ -204,33 +204,57 @@ const ui = { //questo serve, ti amo ,serve per la query selection tanto è tutto
 };
 const audio = document.querySelector('audio');
 
+const changeAudio = (index) => {
+    
+    let audioPath = '';
+    let audioPath1 = '';
+
+    if(state.index >=0 && state.index <=10){
+    audioPath = 'musica/voci.mp3';
+    }
+    /*else if(){
+        audioPath = '';
+    }else(){
+        audioPath ='';
+    }*/
+    
+
+    audio.src = audioPath;
+
+    audio.volume = 0.6; // Set desired volume
+
+    /*audio.play();
+    audio.play()
+        .then(() => console.log('Audio is playing'))
+        .catch((error) => console.error('Error playing audio:', error));*/
+};
+
 const update = (nextpoint) => { //update dei next point da array passaggio per riferimento 
   state.index = nextpoint;
   render();
   changeAudio(state.index);
 };
 
-const changeAudio = (index) => {
-    
-    let audioPath = '';
 
-    if(index == 1){
-     audioPath = 'musica/voci.mp3';
-    }
-
-    audio.src = audioPath;
-    audio.volume = 1; // Set desired volume
-    audio.play();
-    audio.play()
-        .then(() => console.log('Audio is playing'))
-        .catch((error) => console.error('Error playing audio:', error));
-};
 const render = () => { //render di tutto basandosi sempre su array 
   ui.action.innerText = state.current.action; 
   ui.left.innerText = state.current.opt1.text;
   ui.right.innerText = state.current.opt2.text;
-  ui.imagebox.style.backgroundImage = `url(images/${state.index}.png)`; //loading basato su index array con jpeg non ho voglia di cambiarli l'estensione lo tenete così 
-  
+
+  let imageUrl = '';
+
+  // Conditionally set image URL based on the index
+  if (state.index >= 0 && state.index <= 2) {
+    imageUrl = 'images/-1.png'; 
+  } else if (state.index === 11) {
+    imageUrl = 'images/11.png'; 
+  } else if (state.index === 12) {
+    imageUrl = 'images/12.png'; 
+  } else {
+    imageUrl = `images/${state.index}.png`; // Default image URL based on state's index
+  }
+
+  ui.imagebox.style.backgroundImage = `url(${imageUrl})`;
 };
 
 ui.left.addEventListener('click', () => update(state.current.opt1.nextpoint)); //prendi event dal mouse sinistra destra della UI stai nel chill fra basta che stai nel tuo e non tocchi niente

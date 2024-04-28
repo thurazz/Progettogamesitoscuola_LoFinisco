@@ -33,7 +33,7 @@
         <div class="button"> <button type="submit">Login</button> </div>
     </form>
         </div>
-        <a href="registration.html"><p>Se non sei registrato clicca qui</p> </a>
+        <a href="registration.php"><p>Se non sei registrato clicca qui</p> </a>
     </div>
 </body>
 </html>
