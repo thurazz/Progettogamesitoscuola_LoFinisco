@@ -1,30 +1,30 @@
 const NOVEL = [
     { //scelta 0
-        action: "Andiamo a vedere il tramonto?",
+        action: "COSA VUOI AFFRONTARE?",
         opt1: {
-            text: "Si",
-            nextpoint: 2,
+            text: "Me stesso",
+            nextpoint: 1,
         },
         opt2:  {
-            text: "No",
+            text: "I miei pensieri",
             nextpoint: 1,
         },
     },
     {//scelta 1
-        action: "Non accetto un no come risposta",
+        action: "Era da molto che non vedevo il tramonto",
         opt1: {
-            text: "Si",
+            text: "Ascolta le voci",
             nextpoint: 2,
         },
         opt2: {
-            text: "Si",
-            nextpoint: 2,
+            text: "Ignorale",
+            nextpoint: 0,
         }
     },
     {//scelta 2
-        action: "Perchè nel mentre che camminiamo non parliamo?",
+        action: "Ma loro non la smettono..",
         opt1: {
-            text: "Va bene di cosa vuoi parlare?",
+            text: "",
             nextpoint: 3,
         },
         opt2: {
@@ -33,9 +33,9 @@ const NOVEL = [
         }
     },
     {//scelta 3
-        action: "Non ti senti osservato?",
+        action: "",
         opt1: {
-            text: "Si, ma è normale loro possono vedere il vuoto",
+            text: "",
             nextpoint: 4,
         },
         opt2: {
@@ -44,9 +44,9 @@ const NOVEL = [
         }
     },
     {//scelta 4 aggiungere foto
-        action: "Il vuoto, che cosa significa?",
+        action: "",
         opt1: {
-            text: "Non ti ricordi?",
+            text: "",
             nextpoint: 5,
         },
         opt2: {
@@ -55,9 +55,9 @@ const NOVEL = [
         }
     },
     {//scelta 5
-        action: "No",
+        action: "",
         opt1: {
-            text: "Quello che hai sempre avuto dentro",
+            text: "",
             nextpoint: 6,
         },
         opt2: {
@@ -66,9 +66,9 @@ const NOVEL = [
         }
     },
     {//scelta 6
-        action: "No non me lo ricordo",
+        action: "",
         opt1: {
-            text: "Forse un ricordo ti potrebbe aiutare",
+            text: "",
             nextpoint: 7,
         },
         opt2: {
@@ -77,9 +77,9 @@ const NOVEL = [
         }
     },
     {//scelta 7
-        action: "perchè non ricordo..",
+        action: "",
         opt1: {
-            text: "alcune cose forse è meglio dimenticarle",
+            text: "",
             nextpoint: 8,
         },
         opt2: {
@@ -202,35 +202,35 @@ const ui = { //questo serve, ti amo ,serve per la query selection tanto è tutto
   right: document.querySelector('#option-2'),
   imagebox: document.querySelector('#image-box')
 };
+const audio = document.querySelector('audio');
 
 const update = (nextpoint) => { //update dei next point da array passaggio per riferimento 
   state.index = nextpoint;
   render();
   changeAudio(state.index);
 };
-/*const changeAudio = (index) => {
-    const audio = document.querySelector('audio');
-    switch(index) {
-      case 0:
-        audio.src = "musica/flaterness.mp3"; // Change to the path of your audio file for choice 0
-        audio.volume=0.2;
-        break;
-      case 1:
-        audio.src = "musica/flaterness.mp3"; // Change to the path of your audio file for choice 1
-        audio.volume=0.2;
-        break;
-      // Add more cases for each choice as needed
-      default:
-        audio.src = "musica/flaterness.mp3";
-        audio.volume=0.2;
-        break;
+
+const changeAudio = (index) => {
+    
+    let audioPath = '';
+
+    if(index == 1){
+     audioPath = 'musica/voci.mp3';
     }
-  };*/
+
+    audio.src = audioPath;
+    audio.volume = 1; // Set desired volume
+    audio.play();
+    audio.play()
+        .then(() => console.log('Audio is playing'))
+        .catch((error) => console.error('Error playing audio:', error));
+};
 const render = () => { //render di tutto basandosi sempre su array 
   ui.action.innerText = state.current.action; 
   ui.left.innerText = state.current.opt1.text;
   ui.right.innerText = state.current.opt2.text;
   ui.imagebox.style.backgroundImage = `url(images/${state.index}.png)`; //loading basato su index array con jpeg non ho voglia di cambiarli l'estensione lo tenete così 
+  
 };
 
 ui.left.addEventListener('click', () => update(state.current.opt1.nextpoint)); //prendi event dal mouse sinistra destra della UI stai nel chill fra basta che stai nel tuo e non tocchi niente

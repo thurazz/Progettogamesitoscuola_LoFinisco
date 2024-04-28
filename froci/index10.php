@@ -5,11 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<audio loop autoplay preload="auto">
-    <source src="musica/flaterness.mp3" type="audio/mp3">
-
+<audio id="myaudio" loop autoplay preload="auto">
     Il browser non supporta la riproduzione di audio;
 </audio>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap" rel="stylesheet">
