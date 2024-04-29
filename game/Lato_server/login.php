@@ -37,8 +37,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         } else {
             // Invalid username or password
             session_start();
-            $_SESSION['error'] = "Database error: " . $e->getMessage();
             http_response_code(401);
+            $_SESSION['error'] = "Invalid username or password";
             header('Location: http://moonhubserver.ddns.net/login.php');
             exit();
         }

@@ -46,22 +46,22 @@
             Affronta le tue preuccpazioni che si celano dietro ai mostri.
             Lily deve navigare tra ostacoli fisici nel parco e le sue sfide interiori, decidendo se confrontare i mostri che si nascondono o cercare rifugio nell'oscurità.
             Con una durata di gioco di 10-15 minuti, "Echi dell'Abisso" presenta uno stile grafico unico e soluzioni audio autentiche, 
-            offrendo una esperienza che mescola abilmente l'arte delle parole con la forma interattiva del gioco.<br><br><br></p></div>
+            offrendo una esperienza che mescola abilmente l'arte delle parole con la forma interattiva del gioco.<br><br><br>
+            </p></div>
             
-            <section id="commenti2">
+            <section id="commenti">
                 <h2>Commenti</h2>
                 <a href="registration.php"><p>registrazione</p></a>
                 <a href="login.php"><p>login</p></a>
                 <br><br>
             </section>
 
-            <?php echo isset($_SESSION['user_id']) ? "<p>Welcome, " . $_SESSION['username'] . "!</p>" : ""; ?>
-
             <section id="commentare">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <textarea name="comment" rows="4" cols="50" placeholder="Write your comment here..." required></textarea><br>
-            <button type="submit">Submit Comment</button>
-            </form>
+        <form method="post" action="/Lato_server/save_comment.php">
+            <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Write your comment here..." required></textarea><br>
+            <button id="submit" type="submit">Submit Comment</button>
+        </form>
+
             </section>  
 
         </section>

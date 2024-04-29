@@ -126,6 +126,11 @@ body
     border-color: rgb(156, 144, 144);
     color: rgb(156, 144, 144);
 }
-#commenti{
-    display: none;
+
+#comment{
+    background-color: rgb(126, 124, 124);
+    color: black;
+}
+#submit{
+    color: rgb(0, 0, 0);
 }
