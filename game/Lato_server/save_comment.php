@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Connessione al database
-$dsn = "mysql:host=localhost;dbname=comments_db";
+$dsn = "mysql:host=localhost;dbname=comments";
 $username_db = "root";
 $password_db = "890980";
 
