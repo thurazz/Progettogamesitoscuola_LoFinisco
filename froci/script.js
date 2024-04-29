@@ -203,15 +203,20 @@ const ui = { //questo serve, ti amo ,serve per la query selection tanto è tutto
   imagebox: document.querySelector('#image-box')
 };
 const audio = document.querySelector('audio');
-
+let currentAudioPath = '';
 const changeAudio = (index) => {
     
     let audioPath = '';
-    let audioPath1 = '';
 
     if(state.index >=0 && state.index <=10){
-    audioPath = 'musica/voci.mp3';
+    audioPath = 'musica/free.wav'; 
     }
+
+    if (audioPath !== currentAudioPath) {
+        audio.src = audioPath; // Set the new audio source path
+        currentAudioPath = audioPath; // Update the current audio path variable
+    }
+
     /*else if(){
         audioPath = '';
     }else(){
@@ -219,14 +224,12 @@ const changeAudio = (index) => {
     }*/
     
 
-    audio.src = audioPath;
-
     audio.volume = 0.6; // Set desired volume
 
-    /*audio.play();
+    audio.play();
     audio.play()
         .then(() => console.log('Audio is playing'))
-        .catch((error) => console.error('Error playing audio:', error));*/
+        .catch((error) => console.error('Error playing audio:', error));
 };
 
 const update = (nextpoint) => { //update dei next point da array passaggio per riferimento 
