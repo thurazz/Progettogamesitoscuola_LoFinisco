@@ -32,8 +32,9 @@ try {
         $stmt->execute();
 
         // Redirect dopo aver salvato il commento
-        header('Location: /path/to/success_page.php');
+        header('Location: index10.php');
         exit();
+
     } else {
         http_response_code(400);
         exit("Bad Request");

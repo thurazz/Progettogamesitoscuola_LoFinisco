@@ -57,7 +57,7 @@
             </section>
 
             <section id="commentare">
-        <form method="post" action="/Lato_server/save_comment.php">
+        <form method="post" action="save_comment.php">
             <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Write your comment here..." required></textarea><br>
             <button id="submit" type="submit">Submit Comment</button>
         </form>

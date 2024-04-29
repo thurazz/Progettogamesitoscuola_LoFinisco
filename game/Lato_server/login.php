@@ -1,5 +1,6 @@
 <?php
 // check con if per merda
+session_start(); // starta sessione di autenticazione prima dopo durante anche mentre caghi che sei inerme
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
