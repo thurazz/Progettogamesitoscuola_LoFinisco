@@ -58,15 +58,30 @@
 
             <section id="commentare">
         <form method="post" action="save_comment.php">
+
             <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Write your comment here..." required></textarea><br>
             <button id="submit" type="submit">Submit Comment</button>
+
         </form>
+            </section> 
 
-            </section>  
-
+            <section id="commentibrutti">
+                <?php if (!empty($comments)) : ?>
+                <?php foreach ($comments as $comment) : ?>
+                <div class="comment">
+                    <strong><?= htmlspecialchars($comment['username']) ?></strong>
+                    <p><?= htmlspecialchars($comment['comment']) ?></p>
+                    <small><?= $comment['created_at'] ?></small>
+                </div>
+            <?php endforeach; ?>
+            <?php else : ?>
+                <p>Ancora nessun commento.</p>
+            <?php endif; ?>
+            </section>
+            
         </section>
     </section>
-    </section>
+</section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="script.js"></script>
 </body>
