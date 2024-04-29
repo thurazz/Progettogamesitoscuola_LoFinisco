@@ -10,17 +10,6 @@ const NOVEL = [
             nextpoint: 1,
         },
     },
-    {//scelta 1
-        action: "Voglio guardare il tramonto.",
-        opt1: {
-            text: "Vai al parco.",
-            nextpoint: 2,
-        },
-        opt2: {
-            text: "Vai sopra quel grattacielo.",
-            nextpoint: 2,
-        }
-    },
     {//scelta 2
         action: "'Era da molto che non uscivo,il mondo sembra diverso.'",
         opt1: {
@@ -208,28 +197,23 @@ const changeAudio = (index) => {
     
     let audioPath = '';
 
-    if(state.index >=0 && state.index <=10){
-    audioPath = 'musica/free.wav'; 
+    if(state.index >= -1 && state.index <= 2){
+    audioPath = 'musica/Flaterness.mp3'; 
+    audio.volume = 0.15;
     }
-
+    else if(state.index == 3){
+        audioPath = 'musica/Realization.wav'
+    }
     if (audioPath !== currentAudioPath) {
         audio.src = audioPath; // Set the new audio source path
         currentAudioPath = audioPath; // Update the current audio path variable
     }
 
-    /*else if(){
-        audioPath = '';
-    }else(){
-        audioPath ='';
-    }*/
-    
-
-    audio.volume = 0.6; // Set desired volume
-
-    audio.play();
+    //test section delet it post nigga
+    /*audio.play();
     audio.play()
         .then(() => console.log('Audio is playing'))
-        .catch((error) => console.error('Error playing audio:', error));
+        .catch((error) => console.error('Error playing audio:', error));*/
 };
 
 const update = (nextpoint) => { //update dei next point da array passaggio per riferimento 
@@ -247,10 +231,10 @@ const render = () => { //render di tutto basandosi sempre su array
   let imageUrl = '';
 
   // Conditionally set image URL based on the index
-  if (state.index >= 0 && state.index <= 2) {
+  if (state.index === 0) {
     imageUrl = 'images/-1.png'; 
-  } else if (state.index === 11) {
-    imageUrl = 'images/11.png'; 
+  } else if (state.index >= 1 && state.index <= 6) {
+    imageUrl = 'images/0.png'; 
   } else if (state.index === 12) {
     imageUrl = 'images/12.png'; 
   } else {

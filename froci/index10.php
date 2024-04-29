@@ -8,9 +8,6 @@
 <audio  id="myaudio" loop autoplay preload="auto">
     Il browser non supporta la riproduzione di audio;
 </audio>
-<audio  id="audio" loop autoplay preload="auto">
-    Il browser non supporta la riproduzione di audio;
-</audio>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,18 +47,21 @@
             Lily deve navigare tra ostacoli fisici nel parco e le sue sfide interiori, decidendo se confrontare i mostri che si nascondono o cercare rifugio nell'oscurità.
             Con una durata di gioco di 10-15 minuti, "Echi dell'Abisso" presenta uno stile grafico unico e soluzioni audio autentiche, 
             offrendo una esperienza che mescola abilmente l'arte delle parole con la forma interattiva del gioco.<br><br><br></p></div>
-
+            
             <section id="commenti2">
                 <h2>Commenti</h2>
                 <a href="registration.php"><p>registrazione</p></a>
                 <a href="login.php"><p>login</p></a>
-                <br><br><br>
+                <br><br>
             </section>
 
-            <section id="commentare">
-            
-            
+            <?php echo isset($_SESSION['user_id']) ? "<p>Welcome, " . $_SESSION['username'] . "!</p>" : ""; ?>
 
+            <section id="commentare">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <textarea name="comment" rows="4" cols="50" placeholder="Write your comment here..." required></textarea><br>
+            <button type="submit">Submit Comment</button>
+            </form>
             </section>  
 
         </section>
