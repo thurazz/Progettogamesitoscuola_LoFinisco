@@ -4,7 +4,8 @@ session_start();
 // Verifica se l'utente è loggato
 if (!isset($_SESSION['user_id'])) {
     http_response_code(401);
-    exit("Unauthorized");
+    header('Location: login.php');
+    exit();
 }
 
 // Connessione al database

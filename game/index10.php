@@ -32,8 +32,9 @@
                 <div id="option-1"><p class="testo">PEFFORZA</p></div>
                 <div id="option-2"><p class="testo">PEFFORZA</p></div>
             </div>
-            <div class="text-paragaphs">  <p>‎ </p> <p>‎ </p>
-            <p>"Being Myself" è una visual novel che ti trasporta nel mondo interiore di Lily,
+            <div class="text-paragaphs">
+            <p><br><br>
+            "Being Myself" è una visual novel che ti trasporta nel mondo interiore di Lily,
             una giovane donna alle prese con i suoi demoni interiori. Mentre si avventura nel 
             parco al tramonto,le sue lotte personali prendono vita sotto forma di entità mostruose,
             manifestazioni dei suoi tormenti mentali e della schizofrenia che la affligge.
@@ -48,22 +49,20 @@
             Con una durata di gioco di 10-15 minuti, "Echi dell'Abisso" presenta uno stile grafico unico e soluzioni audio autentiche, 
             offrendo una esperienza che mescola abilmente l'arte delle parole con la forma interattiva del gioco.<br><br><br>
             </p></div>
-            
+
             <section id="commenti">
                 <h2>Commenti</h2>
-                <a href="registration.php"><p>registrazione</p></a>
-                <a href="login.php"><p>login</p></a>
+                <a href="login.php"><p>Accedi con nome utente e password per commentare.</p></a>
                 <br><br>
             </section>
 
             <section id="commentare">
-        <form method="post" action="save_comment.php">
-
-            <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Write your comment here..." required></textarea><br>
+            <form method="post" action="save_comment.php">
+            <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Scrivi il tuo commento qui..." required></textarea><br>
             <button id="submit" type="submit">Submit Comment</button>
 
-        </form>
-            </section> 
+            </form>
+                </section> 
 
             <section id="commentibrutti">
                 <?php

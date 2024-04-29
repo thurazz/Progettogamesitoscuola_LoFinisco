@@ -6,21 +6,17 @@
     <link rel="stylesheet" href="style1.css">
     <title>User Login</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Check if there's an error message in the session
-            <?php
-            if (isset($_SESSION['error'])) {
-                echo "$('.errore').text('" . $_SESSION['error'] . "');";
-                unset($_SESSION['error']); // Clear the error message
-            }
-            ?>
-        });
-    </script>
 </head>
 <body>
     <div id="containertop">
         <div id="panello">
+            <?php
+            session_start();
+            if (isset($_SESSION['error'])) {
+                echo '<div class="errore">' . htmlspecialchars($_SESSION['error']) . '</div>';
+                unset($_SESSION['error']); // Clear the error message
+            }
+            ?>
             <div class="errore"></div>
             <h2>User Login</h2>
             <form action="/Lato_server/login.php" method="post"> 
@@ -33,5 +29,16 @@
             <a href="registration.php"><p>Se non sei registrato clicca qui</p></a>
         </div>
     </div>
+    <script>
+        // jQuery script to display error message in 'errore' div if HTTP response code is 401
+        $(document).ready(function() {
+            <?php
+            // Check HTTP response code and display error message if 401 Unauthorized
+            if (http_response_code() === 401) {
+                echo "$('.errore').text('Unauthorized: Invalid username or password.');";
+            }
+            ?>
+        });
+    </script>
 </body>
 </html>
