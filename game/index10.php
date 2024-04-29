@@ -56,7 +56,7 @@
                 <br><br>
             </section>
 
-            <section id="commentare">
+            <section id="comment">
             <form method="post" action="save_comment.php">
             <textarea id="commentz" name="comment" rows="4" cols="50" placeholder="Scrivi il tuo commento qui..." required></textarea><br>
             <button id="submit" type="submit">Submit Comment</button>
@@ -84,10 +84,11 @@
                 ?>
                 <?php if (!empty($comments)) : ?>
                 <?php foreach ($comments as $comment) : ?>
-                <div id="comment">
-                    <div class ="nome"> <strong><?= htmlspecialchars($comment['username']) ?></strong> </div>
+                <div id="comment1">
+                    <div id ="nome"> <strong><?= htmlspecialchars($comment['username']) ?></strong> </div>
                     <p><?= htmlspecialchars($comment['comment']) ?></p>
-                    <small><?= $comment['created_at'] ?></small>
+                    <div id = "orario"> <small><?= $comment['created_at'] ?></small> </div>
+                    <br>
                 </div>
             <?php endforeach; ?>
             <?php else : ?>

@@ -144,11 +144,13 @@ body
     background-color: black;
     color: white;
 }
-#comment{
+#comment1{
     width: 500px;
     margin: 2px solid white;
 }
-.nome{
+#nome{
     color: rgb(158, 9, 9);
-    text-decoration: underline;
+}
+#orario{
+    text-align: right;
 }
