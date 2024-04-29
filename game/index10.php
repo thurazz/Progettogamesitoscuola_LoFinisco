@@ -66,6 +66,23 @@
             </section> 
 
             <section id="commentibrutti">
+                <?php
+                session_start();
+                $dsn = "mysql:host=localhost;dbname=comments";
+                $username_db = "root";
+                $password_db = "890980";
+
+                try {
+                    $pdo = new PDO($dsn, $username_db, $password_db);
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                    // Query per selezionare tutti i commenti
+                    $stmt = $pdo->query("SELECT * FROM comments ORDER BY created_at DESC");
+                    $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                } catch(PDOException $e){
+                die("Error: " . $e->getMessage());
+                }
+                ?>
                 <?php if (!empty($comments)) : ?>
                 <?php foreach ($comments as $comment) : ?>
                 <div class="comment">
@@ -78,7 +95,7 @@
                 <p>Ancora nessun commento.</p>
             <?php endif; ?>
             </section>
-            
+
         </section>
     </section>
 </section>
