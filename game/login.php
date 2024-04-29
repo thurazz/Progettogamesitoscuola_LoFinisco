@@ -35,7 +35,7 @@
             <?php
             // Check HTTP response code and display error message if 401 Unauthorized
             if (http_response_code() === 401) {
-                echo "$('.errore').text('Unauthorized: Invalid username or password.');";
+                echo "$('.errore').text('username o password errati si prega di riprovare');";
             }
             ?>
         });

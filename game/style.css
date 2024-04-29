@@ -144,3 +144,11 @@ body
     background-color: black;
     color: white;
 }
+#comment{
+    width: 500px;
+    margin: 2px solid white;
+}
+.nome{
+    color: rgb(158, 9, 9);
+    text-decoration: underline;
+}
