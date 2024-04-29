@@ -1,0 +1,68 @@
+const state = {
+  index: 0,
+  data: NOVEL,
+  get current() {
+    return this.data[this.index];
+  }
+};
+
+const ui = {
+  action: document.querySelector('#action-text'),
+  left: document.querySelector('#option-1'),
+  right: document.querySelector('#option-2'),
+  imagebox: document.querySelector('#image-box')
+};
+
+const audio = {
+  src: 'musica/voci.mp3',
+  element: document.querySelector('audio'),
+  volume: 0.6,
+  muted: false
+};
+
+const changeAudio = (index) => {
+  if (state.index >= 0 && state.index <= 10) {
+    audio.src = 'musica/voci.mp3';
+  } else {
+    audio.src = '';
+  }
+
+  if (state.index === 0) {
+    audio.muted = false;
+  } else {
+    audio.muted = true;
+  }
+
+  audio.element.volume = audio.volume;
+  audio.element.load(); // Preload the audio to avoid reloading it later
+};
+
+const update = (nextpoint) => {
+  state.index = nextpoint;
+  render();
+  changeAudio(state.index);
+};
+
+// ... (rest of the code remains the same)
+
+// Load the audio once at the start
+audio.element.src = audio.src;
+audio.element.volume = audio.volume;
+audio.element.load(); // Preload the audio to avoid reloading it later
+
+// Mute the audio at the start
+audio.muted = true;
+audio.element.volume = audio.volume * (audio.muted ? 0 : 1);
+
+// Unmute the audio when the user clicks on an option
+ui.left.addEventListener('click', () => {
+  audio.muted = false;
+  update(state.current.opt1.nextpoint);
+});
+
+ui.right.addEventListener('click', () => {
+  audio.muted = false;
+  update(state.current.opt2.nextpoint);
+});
+
+render();
