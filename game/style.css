@@ -126,13 +126,14 @@ body
     border-color: rgb(156, 144, 144);
     color: rgb(156, 144, 144);
 }
-
+#commentz{
+    color: black;
+}
 #comment{
     background-color: rgb(126, 124, 124);
     color: black;
 }
 #submit{
-    background-color: rgba(255, 249, 249, 0.822);
     border: none;
     color: rgb(150, 41, 41);
     padding: 12px 22px;
