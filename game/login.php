@@ -14,7 +14,7 @@
             session_start();
             if (isset($_SESSION['error'])) {
                 echo '<div class="errore">' . htmlspecialchars($_SESSION['error']) . '</div>';
-                unset($_SESSION['error']); // Clear the error message
+                unset($_SESSION['error']); //clear messaggio d'errore
             }
             ?>
             <div class="errore"></div>
@@ -30,10 +30,10 @@
         </div>
     </div>
     <script>
-        // jQuery script to display error message in 'errore' div if HTTP response code is 401
+        // jQuery script 
         $(document).ready(function() {
             <?php
-            // Check HTTP response code and display error message if 401 Unauthorized
+            // Check HTTP response code
             if (http_response_code() === 401) {
                 echo "$('.errore').text('username o password errati si prega di riprovare');";
             }

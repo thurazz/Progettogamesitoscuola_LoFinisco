@@ -1,5 +1,4 @@
 <?php
-// check con if per merda
 session_start(); // starta sessione di autenticazione prima dopo durante anche mentre caghi che sei inerme
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     $username = $_POST["username"];
@@ -14,13 +13,13 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         $pdo = new PDO($dsn, $username_db, $password_db);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Prepare SQL statement
+        // Prepare SQL query
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
 
-        // Bind parameters
+        
         $stmt->bindParam(':username', $username);
 
-        // Execute the query
+        
         $stmt->execute();
 
         // Fetch user

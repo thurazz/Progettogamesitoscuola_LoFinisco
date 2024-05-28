@@ -1,6 +1,5 @@
 <?php
 //godo funziona
-// Check if username and password are provided
 if (isset($_POST["regUsername"]) && isset($_POST["regPassword"])) {
     $username = $_POST["regUsername"];
     $password = $_POST["regPassword"];
@@ -8,8 +7,7 @@ if (isset($_POST["regUsername"]) && isset($_POST["regPassword"])) {
     // Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Validate username and password (you may need more robust validation)
-    // Store user data in database (example: using PDO)
+    // Validate username and password
     $dsn = "mysql:host=localhost;dbname=auth";
     $username_db = "root";
     $password_db = "890980";
@@ -25,7 +23,7 @@ if (isset($_POST["regUsername"]) && isset($_POST["regPassword"])) {
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $hashed_password);
 
-        // Execute the query
+        // query
         $stmt->execute();
 
         // Close connection
