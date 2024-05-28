@@ -1,148 +1,159 @@
 const NOVEL = [
     { //scelta 0
-        action: "COSA VUOI AFFRONTARE?",
+        action: "...",
         opt1: {
-            text: "Me stesso",
+            text: "I fiori conoscono i tuoi segreti.",
             nextpoint: 1,
         },
         opt2:  {
-            text: "I miei pensieri",
-            nextpoint: 1,
+            text: "C'è un uomo che ti osserva da lontano.",
+            nextpoint: 18,
         },
     },
-    {//scelta 2
-        action: "'Era da molto che non uscivo,il mondo sembra diverso.'",
+    {//scelta 1
+        action: "Maledetti fiori. Cosa sapete di me? Perché mi osservate così? Non posso fidarmi di niente.",
         opt1: {
             text: "continui a parlare da sola?",
-            nextpoint: 3,
+            nextpoint: 16,
         },
         opt2: {
             text: "...",
-            nextpoint: 0,
+            nextpoint: 2,
+        }
+    },
+    {//scelta 2
+        action: "Devo tornare a casa. Forse lì troverò un po' di pace.",
+        opt1: {
+            text: "",
+            nextpoint: 3,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 3,
         }
     },
     {//scelta 3
-        action: "'Mi aiuta, mi aiuta a dimenticare quanto sono sola.'",
+        action: "",
         opt1: {
-            text: "Si ma sembri pazza",
+            text: "La porta del seminterrato si è aperta.",
             nextpoint: 4,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Non ti sembra che manchi l'aria?",
+            nextpoint: 4,
         }
     },
     {//scelta 4
-        action: "'Forse lo sono, infondo parlo anche da sola.'",
+        action:  "Questo posto... mi soffoca. Cosa c'è lì sotto che vuole farmi del male?",
         opt1: {
-            text: "Non dovresti dirti questo",
+            text: "é tutto nella tua testa",
             nextpoint: 5,
         },
         opt2: {
-            text: "Sei senza speranze non dovresti guardare il tramonto.",
-            nextpoint: 0, //crazy arch
+            text: "non andare li sotto",
+            nextpoint: 5,
         }
     },
-    {//scelta 5
-        action: "'Sei te il primo a dirlo'",
+    {//scelta 5 
+        action:  "Forse in cucina posso trovare qualcosa per calmarmi.",
         opt1: {
-            text: "Si ma io posso farlo",
+            text: "Le posate si stanno muovendo.",
             nextpoint: 6,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Qualcosa si nasconde dietro il frigorifero.",
+            nextpoint: 6,
         }
     },
-    {//scelta 6 Musica horror tensione pura,immagine con persone che ti guardano
-        action: "",
+    {//scelta 6
+        action: "Le vedo... si muovono davvero. Sto impazzendo, lo so.",
         opt1: {
-            text: "Cambiando discorso sono ore che cammini,non hai notato che ti osservano?",
+            text: "Forse è meglio se vai a dormire",
             nextpoint: 7,
         },
         opt2: {
-            text: "Cambiando discorso sono ore che cammini,non hai notato che ti osservano?",
+            text: "riposati, se continui cosi impazzisci veramente",
             nextpoint: 7,
         }
     },
     {//scelta 7
         action: "",
         opt1: {
-            text: "",
+            text: "Il tuo diario vuole essere letto.",
             nextpoint: 8,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "La tua bambola ha qualcosa da dirti.",
+            nextpoint: 9,
         }
     },
     {//scelta 8
-        action: "",
+        action: "Non voglio ricordare. Ogni pagina è una ferita.",
         opt1: {
-            text: "",
-            nextpoint: 9,
+            text: "Esci è meglio prendere una boccata d'aria",
+            nextpoint: 10,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Forse sarebbe meglio ricordare",
+            nextpoint: 10,
         }
     },
     {//scelta 9
-        action: "",
+        action: "Basta! Smettetela di giocare con la mia mente!",
         opt1: {
-            text: "",
-            nextpoint: 0,
+            text: "La bambola sa cosa hai fatto. Non puoi nasconderti per sempre.",
+            nextpoint: 12,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Ascolta attentamente, potrebbe rivelare un segreto importante.",
+            nextpoint: 12,
         }
     },
     {//scelta 10
-        action: "",
+        action: "Dove devo andare a ricordare?",
         opt1: {
-            text: "",
-            nextpoint: 0,
+            text: "é ovvio dove sei cresciuta",
+            nextpoint: 11,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "dove hai sofferto di più",
+            nextpoint: 11,
         }
     },
     {//scelta 11
-        action: "",
+        action: "ora che sono qui cosa devo fare?",
         opt1: {
-            text: "",
-            nextpoint: 0,
+            text: "Le stanze nascondono segreti.",
+            nextpoint: 14,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Trova la stanza che contiene i tuoi ricordi",
+            nextpoint: 14,
         }
     },
     {//scelta 12
-        action: "",
+        action: "Non riesco a sentire cosa dice",
         opt1: {
-            text: "",
-            nextpoint: 0,
+            text: "Dice di ricordare",
+            nextpoint: 10,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Dice di pentirti di cosa hai fatto",
+            nextpoint: 13,
         }
     },
     {//scelta 13
-        action: "",
+        action: "Dove devo andare per pentirmi?",
         opt1: {
-            text: "",
-            nextpoint: 0,
+            text: "é ovvio dove sei cresciuta",
+            nextpoint: 11,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "è ovvio dove hai sofferto di più",
+            nextpoint: 11,
         }
     },
-    {//scelta 14
+    {//scelta 14 continua qua
         action: "",
         opt1: {
             text: "",
@@ -165,14 +176,36 @@ const NOVEL = [
         }
     },
     {//scelta 16
-        action: "",
+        action: "No non sto parlando da sola ci siete voi",
+        opt1: {
+            text: "Forse dovresti tornare a casa",
+            nextpoint: 2,
+        },
+        opt2: {
+            text: "Riposati il caldo ti sta dando alla testa",
+            nextpoint: 2,
+        }
+    },
+    {//scelta 17
+        action: "Smettetela! Non c'è nessuno lì. Basta con questi giochetti!",
+        opt1: {
+            text: "è meglio se torni a casa finirai per impazzire",
+            nextpoint: 3,
+        },
+        opt2: {
+            text: "l'uomo non è famigliare?",
+            nextpoint: 18,
+        }
+    },
+    {//scelta 18
+        action: "No,voglio ritornare a casa ora",
         opt1: {
             text: "",
-            nextpoint: 0,
+            nextpoint: 3,
         },
         opt2: {
             text: "",
-            nextpoint: 0,
+            nextpoint: 3,
         }
     },
 ];
@@ -197,7 +230,7 @@ const changeAudio = (index) => {
     
     let audioPath = '';
 
-    if(state.index >= -1 && state.index <= 2){
+    if(state.index >= 0 && state.index <= 2){
     audioPath = 'musica/Flaterness.mp3'; 
     audio.volume = 0.15;
     }
@@ -231,11 +264,19 @@ const render = () => { //render di tutto basandosi sempre su array
   let imageUrl = '';
 
   // Conditionally set image URL based on the index
-  if (state.index === 0) {
-    imageUrl = 'images/-1.png'; 
-  } else if (state.index >= 1 && state.index <= 6) {
+  if (state.index <= 3) {
     imageUrl = 'images/0.png'; 
-  } else if (state.index === 12) {
+  } else if (state.index >= 3 && state.index <= 4) {
+    imageUrl = 'images/gr.png'; 
+  }else if (state.index >= 16 && state.index <= 18) {
+    imageUrl = 'images/0.png'; 
+  }else if (state.index >= 5 && state.index <= 6) {
+    imageUrl = 'images/grr.png'; 
+  } else if (state.index >= 7 && state.index <= 10) {
+    imageUrl = 'images/grrr.png'; 
+  }else if (state.index == 13 && state.index == 12) {
+    imageUrl = 'images/grrr.png'; 
+  }else if (state.index === 12) {
     imageUrl = 'images/12.png'; 
   } else {
     imageUrl = `images/${state.index}.png`; // Default image URL based on state's index
