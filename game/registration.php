@@ -33,8 +33,8 @@
     <div class="container">
         <form action="/Lato_server/register.php" method="post" onsubmit="return validateForm()">
             <p class="title">Registrazione</p>
-            <input placeholder="Username" class="username input" type="text" required>
-            <input placeholder="Password" class="password input" type="password" required>
+            <input name="regUsername" class="username input" type="text" required>
+            <input name="regPassword" class="password input" type="password" required>
             <input placeholder="Conferma Password" class="password input" type="password" required>
             <p id="error-message" style="color: red;"></p>
             <button class="btn" type="submit">Registrati</button>

@@ -21,8 +21,8 @@
             <div class="container">
             <form class="form" action="/Lato_server/login.php" method="post">
             <p class="title">Login</p>
-            <input placeholder="Username" class="username input" type="text">
-            <input placeholder="Password" class="password input" type="password">
+            <input name="username" placeholder="Username" class="username input" type="text">
+            <input  name="password" placeholder="Password" class="password input" type="password">
             <button class="btn" type="submit">Login</button>
             <a href="registration.php"><p>Se non sei registrato clicca qui</p></a>
             </form>
