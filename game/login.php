@@ -18,16 +18,15 @@
             }
             ?>
             <div class="errore"></div>
-            <h2>User Login</h2>
-            <form action="/Lato_server/login.php" method="post"> 
-                <div class="username"> <label for="username">Username:</label><br> </div>
-                <div class="username"> <input type="text" id="username" name="username" required><br> </div>
-                <div class="password"> <label for="password">Password:</label><br> </div>
-                <div class="password"> <input type="password" id="password" name="password" required><br><br> </div>
-                <div class="button"> <button type="submit">Login</button> </div>
-            </form>
+            <div class="container">
+            <form class="form" action="/Lato_server/login.php" method="post">
+            <p class="title">Login</p>
+            <input placeholder="Username" class="username input" type="text">
+            <input placeholder="Password" class="password input" type="password">
+            <button class="btn" type="submit">Login</button>
             <a href="registration.php"><p>Se non sei registrato clicca qui</p></a>
-        </div>
+            </form>
+            </div>
     </div>
     <script>
         // jQuery script 

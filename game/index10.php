@@ -67,13 +67,6 @@
             </form>
             </div>
 
-            <section id="comment">
-            <form method="post" action="save_comment.php">
-            <textarea id="commentz" name="comment" rows="4" cols="50" placeholder="Scrivi il tuo commento qui..." required></textarea><br>
-            <button id="submit" type="submit">Submit Comment</button>
-            </form>
-            </section> 
-
             <section id="commentibrutti">
                 <?php
                 session_start();
