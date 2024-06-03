@@ -57,7 +57,7 @@ const NOVEL = [
     {//scelta 5 
         action:  "Forse in cucina posso trovare qualcosa per calmarmi.",
         opt1: {
-            text: "Le posate si stanno muovendo.",
+            text: "Quella forchetta si sta muovendo.",
             nextpoint: 6,
         },
         opt2: {
@@ -66,7 +66,7 @@ const NOVEL = [
         }
     },
     {//scelta 6
-        action: "Le vedo... si muovono davvero. Sto impazzendo, lo so.",
+        action: "Le vedo... si muove davvero. Sto impazzendo, lo so.",
         opt1: {
             text: "Forse è meglio se vai a dormire",
             nextpoint: 7,
@@ -154,25 +154,25 @@ const NOVEL = [
         }
     },
     {//scelta 14 continua qua
-        action: "",
+        action: "Devo trovare la stanza rossa",
         opt1: {
-            text: "",
-            nextpoint: 0,
+            text: "Dentro quella stanza troverai la chiave per la tua pace",
+            nextpoint: 15,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Qualcuno ti sta aspettando qui da molto tempo",
+            nextpoint: 19,
         }
     },
     {//scelta 15
-        action: "",
+        action: "Dove devo andare per trovare la stanza?",
         opt1: {
-            text: "",
-            nextpoint: 0,
+            text: "Vai a sinistra",
+            nextpoint: 20,
         },
         opt2: {
-            text: "",
-            nextpoint: 0,
+            text: "Vai a destra",
+            nextpoint: 20,
         }
     },
     {//scelta 16
@@ -208,6 +208,94 @@ const NOVEL = [
             nextpoint: 3,
         }
     },
+    {//scelta 19
+        action: "Chi mi sta aspettando?",
+        opt1: {
+            text: "Trova la stanza e lo capirai",
+            nextpoint: 15,
+        },
+        opt2: {
+            text: "Per capirlo devi vederlo con i tuoi occhi",
+            nextpoint: 15,
+        }
+    },
+    {//scelta 20
+        action: "Sento delle voci provenire da quel corridoio",
+        opt1: {
+            text: "Non scappare insegui le voci",
+            nextpoint: 21,
+        },
+        opt2: {
+            text: "Corri lontano non affrontare il passato",
+            nextpoint: 22,
+        }
+    },
+    {//scelta 21
+        action: "é questa la porta?",
+        opt1: {
+            text: "Si",
+            nextpoint: 23,
+        },
+        opt2: {
+            text: "Aprila e scoprilo con i tuoi occhi",
+            nextpoint: 23,
+        }
+    },
+     {//scelta 22
+        action: "No questa volta non voglio scappare",
+        opt1: {
+            text: "allora corri a cercare la porta",
+            nextpoint: 21,
+        },
+        opt2: {
+            text: "allora corri a trovare i tuoi ricordi",
+            nextpoint: 21,
+        }
+    },
+     {//scelta 23
+        action: "Ma quella sono io?",
+        opt1: {
+            text: "Ti ricordi di essere mai scappata?",
+            nextpoint: 24,
+        },
+        opt2: {
+            text: "Ti ricordi come sei arrivata fino a qui?",
+            nextpoint: 24,
+        }
+    },
+    {//scelta 24
+        action: "Io non ricordo niente",
+        opt1: {
+            text: "sei sempre stata qui insieme a noi",
+            nextpoint: 25,
+        },
+        opt2: {
+            text: "tu non te ne sei mai andata",
+            nextpoint: 25,
+        }
+    },
+    {//scelta 25
+        action: "Non capisco",
+        opt1: {
+            text: "Tu morirai qui dentro, insieme a noi",
+            nextpoint: 26,
+        },
+        opt2: {
+            text: "Tu morirai qui dentro, insieme a noi",
+            nextpoint: 26,
+        }
+    },
+    {//scelta 26
+        action: "",
+        opt1: {
+            text: "",
+            nextpoint: 27,
+        },
+        opt2: {
+            text: "",
+            nextpoint: 27,
+        }
+    },
 ];
 
 const state = { //verifica di merda non serve a un cazzo lo puoi anche lascia stare
@@ -237,6 +325,16 @@ const changeAudio = (index) => {
     else if(state.index == 3){
         audioPath = 'musica/Realization.wav'
     }
+    else if(state.index >= 5 && state.index <= 7){
+        audioPath = 'musica/unknown.wav'
+    }else if(state.index >= 23 && state.index <= 26){
+        audioPath = 'musica/voci.mp3'
+    }else if(state.index == 20){
+        audioPath = 'musica/voices.mp3'
+    }else if(state.index >= 8 && state.index <= 19){
+        audioPath = 'musica/Flaterness.wav'
+    }
+
     if (audioPath !== currentAudioPath) {
         audio.src = audioPath; // Set the new audio source path
         currentAudioPath = audioPath; // Update the current audio path variable
@@ -264,22 +362,36 @@ const render = () => { //render di tutto basandosi sempre su array
   let imageUrl = '';
 
   // Conditionally set image URL based on the index
-  if (state.index <= 3) {
+  if (state.index < 3) {
     imageUrl = 'images/0.png'; 
-  } else if (state.index >= 3 && state.index <= 4) {
+  }else if (state.index >= 3 && state.index <= 4) {
     imageUrl = 'images/gr.png'; 
-  }else if (state.index >= 16 && state.index <= 18) {
-    imageUrl = 'images/0.png'; 
   }else if (state.index >= 5 && state.index <= 6) {
     imageUrl = 'images/grr.png'; 
-  } else if (state.index >= 7 && state.index <= 10) {
+  }else if (state.index >= 7 && state.index <= 10) {
     imageUrl = 'images/grrr.png'; 
-  }else if (state.index == 13 && state.index == 12) {
+  }else if (state.index == 11) {
+    imageUrl = 'images/baia.png'; 
+  }else if (state.index >= 12 && state.index <= 13) {
     imageUrl = 'images/grrr.png'; 
-  }else if (state.index === 12) {
-    imageUrl = 'images/12.png'; 
-  } else {
-    imageUrl = `images/${state.index}.png`; // Default image URL based on state's index
+  }else if (state.index >= 14 && state.index <= 15) {
+    imageUrl = 'images/baia.png'; 
+  }else if (state.index >= 16 && state.index <= 18) {
+    imageUrl = 'images/0.png'; 
+  }else if (state.index >= 19 && state.index <= 20) {
+    imageUrl = 'images/baia.png'; 
+  }else if (state.index == 21) {
+    imageUrl = 'images/yo.png'; 
+  }else if (state.index == 22) {
+    imageUrl = 'images/baia.png'; 
+  }else if (state.index == 23) {
+    imageUrl = 'images/io.png'; 
+  }else if (state.index == 24) {
+    imageUrl = 'images/urla.png'; 
+  }else if (state.index >= 25) {
+    imageUrl = 'images/sempre.png'; 
+  }else if (state.index >= 26) {
+    imageUrl = 'images/yoo2.png'; 
   }
 
   ui.imagebox.style.backgroundImage = `url(${imageUrl})`;

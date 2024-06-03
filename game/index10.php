@@ -56,13 +56,23 @@
                 <br><br>
             </section>
 
-                <section id="comment">
+            <div class="card">
+            <span class="title">Lascia un commento</span>
+            <form class="form" method="post" action="save_comment.php">
+            <div class="group">
+            <textarea placeholder="‎" id="comment" name="comment" rows="5" required=""></textarea>
+            <label for="comment">commenta</label>
+            </div>
+            <button type="submit">Invia</button>
+            </form>
+            </div>
+
+            <section id="comment">
             <form method="post" action="save_comment.php">
             <textarea id="commentz" name="comment" rows="4" cols="50" placeholder="Scrivi il tuo commento qui..." required></textarea><br>
             <button id="submit" type="submit">Submit Comment</button>
-
             </form>
-                </section> 
+            </section> 
 
             <section id="commentibrutti">
                 <?php
